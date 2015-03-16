@@ -47,9 +47,12 @@ def asUnicode(s):
     return str(s)
 
 def ensureUtf(s):
-  if type(s) == unicode:
-    return s.encode('utf8', 'ignore')
-  else:
+  try:
+    if type(s) == unicode:
+      return s.encode('utf8', 'ignore')
+    else:
+      return str(s)
+  except:
     return str(s)
 
 def findLoc(body, line, total):
