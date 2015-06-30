@@ -48,10 +48,7 @@ def asUnicode(s):
 
 def ensureUtf(s):
   try:
-    if type(s) == unicode:
-      return s.encode('utf8', 'ignore')
-    else:
-      return str(s)
+    return s.encode('utf8', 'ignore')
   except:
     return str(s)
 
